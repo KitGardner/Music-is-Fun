@@ -1,0 +1,42 @@
+.banner{
+  height: 5vh;
+}
+
+.search-bar{
+  height: 5vh;
+}
+
+.search-content{
+  height: 45vh;
+}
+
+.playlist-content{
+  height: 40vh;
+}
+
+.spacer{
+  height: 3vh;
+}
+
+.song-data-row{
+  height: 50%;
+}
+
+.inline{
+  display: inline;
+}
+
+.heart{
+  font-size: 2em;
+  color: red;
+}
+
+.scrollable{
+  overflow-y: scroll;
+}
+
+.song-card{
+  background-color: lightblue;
+  border: 5px solid black;
+  border-style: outset;
+}

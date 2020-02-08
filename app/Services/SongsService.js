@@ -65,7 +65,7 @@ class SongsService {
     console.log(result);
 
     //TODO After posting it what should you do?
-    store.state.mySongs.push(pickedSong);
+    await this.getMySongs();
   }
 
   /**

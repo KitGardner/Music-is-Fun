@@ -22,7 +22,7 @@ function _drawPlaylist() {
   let template = "";
 
   mySongs.forEach(song => {
-    template += song.playlistTemplate;
+    template += song.PlaylistTemplate;
   })
 
   document.getElementById("playlist").innerHTML = template;
