@@ -28,6 +28,16 @@ function _drawPlaylist() {
   document.getElementById("playlist").innerHTML = template;
 }
 
+function _drawActiveSong() {
+  let activeSong = store.state.activeSong;
+
+  if (!activeSong._id) {
+    throw new Error("Could not find active song to display");
+  }
+
+  document.getElementById("activeSong").innerHTML = activeSong.ActiveSongTemplate;
+}
+
 //Public
 export default class SongsController {
   constructor() {
@@ -81,6 +91,15 @@ export default class SongsController {
     try {
       await SongService.getMySongs();
       _drawPlaylist();
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  setActiveSong(id) {
+    try {
+      SongService.setActiveSong(id);
+      _drawActiveSong();
     } catch (error) {
       console.error(error);
     }

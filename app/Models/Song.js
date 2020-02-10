@@ -11,14 +11,14 @@ export default class Song {
 
   get Template() {
     return `
-    <div class="col-4">
+    <div class="col-lg-4 col-sm-12">
       <div class="row m-1 song-card">
         <div class="col-3 py-2">
-          <img src="${this.albumArt}" alt="" height="100" width="100">
+          <img src="${this.albumArt}" class="embed-responsive embed-responsive-1by1 " alt="">
         </div>
         <div class="col-9">
           <div class="row song-data-row">
-            <div class="col-12">
+            <div class="col-12" onclick="app.songsController.setActiveSong('${this._id}')">
               <h5>${this.artist} - ${this.title}</h5>
             </div>
           </div>
@@ -36,25 +36,35 @@ export default class Song {
 
   get PlaylistTemplate() {
     return `
-    <h5>${this.artist} - ${this.title}</h5>
-    <button onclick="app.songsController.removeSong('${this._id}')">&times;</button>
-        `;
+      <div class="col-3" style="background-color: turquoise; border: 10px solid white">
+        <div class="row">
+          <div class="col d-flex justify-content-between">
+            <h3 class="inline">${this.artist}</h4>
+              <i class="fa fa-minus-circle pt-2 heart" onclick="app.songsController.removeSong('${this._id}')"></i>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h5>${this.title}</h5>
+          </div>
+        </div>
+      </div>`;
   }
 
   get ActiveSongTemplate() {
     return `
     <div class="row">
           <div class="col-12 py-4 d-flex justify-content-center">
-            <img src="${this.albumArt}" alt="">
+            <img src="${this.albumArt}" alt="" height="200" width="200">
           </div>
         </div>
         <div class="row">
-          <div class="col-12" style="text-align: center;">
+          <div class="col-12 title">
             <h3>${this.artist}</h3>
             <p>${this.title}</p>
             <audio controls src="${this.preview}"></audio>
           </div>
         </div>
-    `
+    `;
   }
 }

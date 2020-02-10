@@ -1,13 +1,14 @@
 .banner{
-  height: 5vh;
+  height: 8vh;
 }
 
 .search-bar{
-  height: 5vh;
+  height: 10vh;
 }
 
 .search-content{
-  height: 45vh;
+  height: 40vh;
+  border: 5px solid gold;
 }
 
 .playlist-content{
@@ -39,4 +40,19 @@
   background-color: lightblue;
   border: 5px solid black;
   border-style: outset;
+}
+
+.title{
+  text-align: center;
+}
+
+.album-thumbnail{
+  max-height: 100px;
+  max-width: 100px;
+  min-height: 50px;
+  min-width: 50px;
+}
+
+.scroll-right{
+  overflow-x: scroll;
 }

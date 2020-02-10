@@ -6,7 +6,8 @@ class Store {
    */
   state = {
     songs: [],
-    mySongs: []
+    mySongs: [],
+    activeSong: {}
   };
 }
 

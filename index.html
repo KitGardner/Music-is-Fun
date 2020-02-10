@@ -14,7 +14,7 @@
 <body class="container-fluid">
   <header class="row">
     <div class="col-12 banner bannerStyle">
-      <p>Music is Fun</p>
+      <h1 class="title">Music Is Fun</h1>
     </div>
   </header>
 
@@ -22,7 +22,7 @@
     <div class="row">
       <div class="col-12">
         <div class="row search-bar">
-          <div class="col-3">
+          <div class="col-sm-8 col-lg-5">
             <form onsubmit="app.songsController.search(event)" class="d-flex align-items-center">
               <input type="text" class="form-control" name="query" placeholder="Search For Music"
                 style="width: 60%; display: inline;" />
@@ -31,7 +31,7 @@
               </button>
             </form>
           </div>
-          <div class="col-9 d-flex align-items-center">
+          <div class="col-lg-7 col-sm-12 d-flex align-items-center mb-2">
             <h3 class="text-center">Search Results</h3>
           </div>
         </div>
@@ -40,28 +40,21 @@
         </div>
       </div>
     </div>
-    <div class="row spacer"></div>
+
     <div class="row playlist-content">
-      <div class="col-3" style="background-color: gray;">
-        <div class="row">
-          <div class="col-12 py-4 d-flex justify-content-center">
-            <img src="https://placehold.it/200x200" alt="">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12" style="text-align: center;">
-            <h3>Green Day</h3>
-            <p>Boulevard of broken Dreams</p>
-            <audio controls src=""></audio>
-          </div>
-        </div>
+      <div class="col-3" id="activeSong" style="background-color: gray;">
       </div>
       <div class="col-9">
-        <h3 class="text-center">Playlist</h3>
-        <div class="col-12 m-0" id="playlist">
-          <!-- template for playlist -->
+        <div class="row">
+          <div class="col">
+            <h3 class="title">Playlist</h3>
+          </div>
         </div>
+        <div class="row d-flex flex-row" id="playlist">
+        </div>
+        <!-- template for playlist -->
       </div>
+    </div>
     </div>
   </main>
 

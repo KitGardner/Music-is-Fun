@@ -10,6 +10,15 @@ class SongsService {
     // NOTE this will get your songs on page load
   }
 
+  setActiveSong(id) {
+    let selectedSong = store.state.songs.find(s => s._id == id);
+
+    if (!selectedSong) {
+      throw new Error("Could not find the chosen song to set as active");
+    }
+
+    store.state.activeSong = selectedSong;
+  }
   /**
    * Takes in a search query and retrieves the results that will be put in the store
    * @param {string} query
@@ -64,8 +73,11 @@ class SongsService {
 
     console.log(result);
 
+    let songData = await result.json();
+    pickedSong._id = songData.data._id;
+    store.state.mySongs.push(pickedSong);
     //TODO After posting it what should you do?
-    await this.getMySongs();
+
   }
 
   /**
