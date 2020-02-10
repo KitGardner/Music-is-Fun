@@ -10,8 +10,8 @@ class SongsService {
     // NOTE this will get your songs on page load
   }
 
-  setActiveSong(id) {
-    let selectedSong = store.state.songs.find(s => s._id == id);
+  setActiveSong(id, songList) {
+    let selectedSong = store.state[songList].find(s => s._id == id);
 
     if (!selectedSong) {
       throw new Error("Could not find the chosen song to set as active");

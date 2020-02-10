@@ -96,9 +96,9 @@ export default class SongsController {
     }
   }
 
-  setActiveSong(id) {
+  setActiveSong(id, songList) {
     try {
-      SongService.setActiveSong(id);
+      SongService.setActiveSong(id, songList);
       _drawActiveSong();
     } catch (error) {
       console.error(error);

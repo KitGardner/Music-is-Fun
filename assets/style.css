@@ -1,5 +1,10 @@
+body{
+  background-image: url("./background.jpg");
+  background-repeat: repeat;
+}
+
 .banner{
-  height: 8vh;
+  height: 5vh;
 }
 
 .search-bar{
@@ -7,16 +12,11 @@
 }
 
 .search-content{
-  height: 40vh;
-  border: 5px solid gold;
+  max-height: 40vh;
 }
 
 .playlist-content{
   height: 40vh;
-}
-
-.spacer{
-  height: 3vh;
 }
 
 .song-data-row{
@@ -33,17 +33,17 @@
 }
 
 .scrollable{
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .song-card{
-  background-color: lightblue;
+  background-color: navy;
   border: 5px solid black;
   border-style: outset;
 }
 
 .title{
-  text-align: center;
+  color: white;
 }
 
 .album-thumbnail{
@@ -53,6 +53,17 @@
   min-width: 50px;
 }
 
-.scroll-right{
-  overflow-x: scroll;
+.playlist-card{
+  background-color: turquoise;
+  border: 10px solid black;
+  border-style: inset;
+  height: 30%;
+}
+
+.search-field{
+  display: inline;
+}
+
+.search-btn{
+  width: 25%;
 }

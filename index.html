@@ -13,26 +13,25 @@
 
 <body class="container-fluid">
   <header class="row">
-    <div class="col-12 banner bannerStyle">
-      <h1 class="title">Music Is Fun</h1>
+    <div class="col-12 banner bannerStyle mb-2">
+      <h1 class="title text-center">Music Is Fun</h1>
     </div>
   </header>
 
   <main>
     <div class="row">
       <div class="col-12">
-        <div class="row search-bar">
+        <div class="row search-bar d-flex align-items-center">
           <div class="col-sm-8 col-lg-5">
             <form onsubmit="app.songsController.search(event)" class="d-flex align-items-center">
-              <input type="text" class="form-control" name="query" placeholder="Search For Music"
-                style="width: 60%; display: inline;" />
-              <button class="btn btn-success mt-1 form-control" type="submit" style="width: 8%">
-                &
+              <input type="text" class="form-control search-field" name="query" placeholder="Search For Music" />
+              <button class="btn btn-success mt-1 form-control p-2 mb-1 ml-1 search-btn" type="submit">
+                Search
               </button>
             </form>
           </div>
           <div class="col-lg-7 col-sm-12 d-flex align-items-center mb-2">
-            <h3 class="text-center">Search Results</h3>
+            <h3 class="title text-center">Search Results</h3>
           </div>
         </div>
         <div id="songs" class="row search-content scrollable">
@@ -41,16 +40,16 @@
       </div>
     </div>
 
-    <div class="row playlist-content">
-      <div class="col-3" id="activeSong" style="background-color: gray;">
+    <div class="row">
+      <div class="col-lg-3 col-md-12" id="activeSong">
       </div>
-      <div class="col-9">
+      <div class="col-lg-9 col-md-12">
         <div class="row">
           <div class="col">
-            <h3 class="title">Playlist</h3>
+            <h3 class="title text-center">Playlist</h3>
           </div>
         </div>
-        <div class="row d-flex flex-row" id="playlist">
+        <div class="row scrollable playlist-content" id="playlist">
         </div>
         <!-- template for playlist -->
       </div>

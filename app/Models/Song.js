@@ -14,17 +14,17 @@ export default class Song {
     <div class="col-lg-4 col-sm-12">
       <div class="row m-1 song-card">
         <div class="col-3 py-2">
-          <img src="${this.albumArt}" class="embed-responsive embed-responsive-1by1 " alt="">
+          <img src="${this.albumArt}" class="embed-responsive embed-responsive-1by1 " alt="" onclick="app.songsController.setActiveSong('${this._id}', 'songs')">
         </div>
         <div class="col-9">
           <div class="row song-data-row">
-            <div class="col-12" onclick="app.songsController.setActiveSong('${this._id}')">
+            <div class="col-12 title" onclick="app.songsController.setActiveSong('${this._id}', 'songs')">
               <h5>${this.artist} - ${this.title}</h5>
             </div>
           </div>
           <div class="row song-data-row d-flex align-items-center">
             <div class="col-12 d-flex justify-content-between align-items-center">
-              <p class="inline">${this.price}</p>
+              <p class="inline title">Buy Now $${this.price}</p>
               <i class="fa fa-heart heart" onclick="app.songsController.addSong('${this._id}')"></i>
             </div>
           </div>
@@ -36,16 +36,16 @@ export default class Song {
 
   get PlaylistTemplate() {
     return `
-      <div class="col-3" style="background-color: turquoise; border: 10px solid white">
+      <div class="col-lg-3 col-md-12 playlist-card">
         <div class="row">
           <div class="col d-flex justify-content-between">
-            <h3 class="inline">${this.artist}</h4>
+            <h4 class="inline" onclick="app.songsController.setActiveSong('${this._id}', 'mySongs')">${this.artist}</h4>
               <i class="fa fa-minus-circle pt-2 heart" onclick="app.songsController.removeSong('${this._id}')"></i>
           </div>
         </div>
         <div class="row">
-          <div class="col">
-            <h5>${this.title}</h5>
+          <div class="col-12">
+            <h5 onclick="app.songsController.setActiveSong('${this._id}', 'mySongs')">${this.title}</h5>
           </div>
         </div>
       </div>`;
@@ -59,7 +59,7 @@ export default class Song {
           </div>
         </div>
         <div class="row">
-          <div class="col-12 title">
+          <div class="col-12 title text-center">
             <h3>${this.artist}</h3>
             <p>${this.title}</p>
             <audio controls src="${this.preview}"></audio>
